@@ -5,4 +5,4 @@
     } else {
         x.className = "topnav";
     }
-} 
+}

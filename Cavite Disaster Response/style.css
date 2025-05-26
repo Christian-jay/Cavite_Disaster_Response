@@ -349,6 +349,7 @@ input:-webkit-autofill:active {
   font-size: 25px;
   color: rgb(33, 60, 79);
   margin: 0 10px;
+  margin-bottom: 20px;
   cursor: pointer;
   transition: color 0.3s ease;
 }
@@ -394,17 +395,18 @@ input:-webkit-autofill:active {
   z-index: 1000;
   top: 0;
   right: 0;
-  background-color: #111;
+  background-color: rgb(123, 147, 155);;
   overflow-x: hidden;
   transition: 0.3s;
   padding-top: 60px;
 }
 
 .drawer a {
-  padding: 8px 24px;
+  padding: 15px 24px;
   text-decoration: none;
   font-size: 18px;
-  color: #fff;
+  font-family: 'Inter', sans-serif;
+  color: rgb(28, 49, 65);
   display: block;
   transition: 0.3s;
 }
@@ -414,8 +416,13 @@ input:-webkit-autofill:active {
   top: 10px;
   right: 20px;
   font-size: 36px;
-  color: #fff;
+  color: rgb(28, 49, 65);
   text-decoration: none;
+}
+
+.drawer .closebtn:hover {
+  background-color: transparent;
+  color: #ffdaad;
 }
 
 .topnav .icon {
@@ -423,7 +430,10 @@ input:-webkit-autofill:active {
 }
 
 .drawer a:hover {
-  background-color: #575757;
+  color: #ffdaad;
+  background-color: transparent;
+  border-radius: 40px;
+  transition: 0.5s;
 }
 
 #caption {
@@ -602,8 +612,12 @@ input:-webkit-autofill:active {
   .explore {
     margin-left: auto;
     font-size: 50px;
-
   }
+
+  .support-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
   .learn-more,
   .learn-more-sec-three,

@@ -15,7 +15,7 @@ h2 {
     font-family: 'Young Serif', serif;
 }
 
-p {
+p { 
     text-align: center;
     width: 100%;
     font-family: 'Bitter', serif;
@@ -207,10 +207,11 @@ p {
 }
 
 .section-four-container {
+    justify-content: center;
     color: rgb(28, 49, 65);
     margin-top: 150px;
     display: flex;
-    gap: 300px;
+    gap: 250px;
     font-family: 'Bitter', serif;
 }
 
@@ -226,11 +227,6 @@ p {
 .info-container h6 {
     margin: 0;
     padding: 5;
-}
-
-.info {
-    display: flex;
-    gap: 190px;
 }
 
 input {
@@ -305,9 +301,13 @@ input:focus {
     justify-content: center;
     gap: 10px;
     margin-top: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sign-up-container input {
+    margin-top: 15px;
     padding: 10px;
     font-size: 14px;
     border-radius: 40px;
@@ -330,10 +330,7 @@ input:-webkit-autofill:active {
     color: rgb(255, 255, 255);
     background-color: rgb(33, 60, 79);
     border: none;
-    margin-top: -15px;
-    padding: 10px 15px;
     text-decoration: none;
-    font-size: 15px;
     font-family: 'Bitter', serif;
     border-radius: 40px;
     cursor: pointer;
@@ -454,6 +451,41 @@ input:-webkit-autofill:active {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+.name-inputs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+}
+
+.fname-input,
+.lname-input {
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid #2c3e50;
+}
+
+ .send-btn,
+ .sign-up-btn {
+    width: 15%;
+    padding: 10px 0;
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+  label {
+    font-size: 11px;       /* This is typically the size of h6 (16px) */
+    font-weight: 600;      /* Match h6 boldness */
+    margin-bottom: 0.5rem;
+    margin: 0;
+    padding: 5;
+    font-family: 'Bitter', sans-serif;
+  }
+
 @media screen and (max-width: 600px) {
     .topnav a {
         display: none;
@@ -548,15 +580,18 @@ input:-webkit-autofill:active {
     margin-left: 0;
   }
 
-  .info {
-    flex-direction: column;
-    gap: 10px;
-  }
-
   input,
   .email,
   .message {
     width: 100% !important;
+  }
+
+  .send-btn,
+  .sign-up-btn {
+    width: 15%;
+    padding: 12px 0;
+    font-size: 16px;
+    margin: 10px 0;
   }
 
   .sign-up-container {
@@ -583,6 +618,25 @@ input:-webkit-autofill:active {
     float: right;
     font-size: 24px;
     padding: 14px 16px;
+  }
+
+  .name-inputs {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .input-group {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 150px;
+  }
+
+  .fname-input,
+  .lname-input {
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid #2c3e50;
   }
 }
 
@@ -619,11 +673,9 @@ input:-webkit-autofill:active {
     margin-bottom: 50px;
 }
 
-  .learn-more,
-  .learn-more-sec-three,
   .send-btn,
   .sign-up-btn {
-    width: 40%;
+    width: 15%;
     padding: 12px 0;
     font-size: 16px;
     margin: 10px 0;

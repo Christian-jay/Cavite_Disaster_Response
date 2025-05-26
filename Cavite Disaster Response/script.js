@@ -29,3 +29,16 @@ function myFunction() {
         x.className = "topnav";
     }
 }
+
+function myFunction() {
+  const drawer = document.getElementById("myDrawer");
+  if (drawer.style.width === "250px") {
+    drawer.style.width = "0";
+  } else {
+    drawer.style.width = "250px"; // Drawer width when open
+  }
+}
+
+function closeDrawer() {
+  document.getElementById("myDrawer").style.width = "0";
+}

@@ -10,7 +10,7 @@
     <body>
         <div class="hero-section">
             <div class="header-container">
-                <h3 class="head_title">Cavite Disaster Response</h3>
+                <h1 class="head_title">Cavite Disaster Response</h1>
                 <div class="topnav" id="myTopnav">
                     <a href="#service">Service</a>
                     <a href="#about">About</a>
@@ -22,7 +22,7 @@
                     </a>
                 </div>
             </div>
- 
+
             <div class="section-one-container">
                 <h1 class="section-one-title">Your Supports Aids Disaster <br> Victims</h1>
                 <h4 class="section-description">Your donation will empower affeted communities to regain strength and <br> rebuild their lives</h4>
@@ -34,17 +34,17 @@
 
         <div class="section-two-container">
             <div>
-                <img src="Assets/section_two_first_pic.jpeg">
+                <img class="modal-image" src="Assets/section_two_first_pic.jpeg">
                 <h2>Provide Emergency <br> Information & Resources</h2>
                 <p>Offer real-time updates, safety guidelines, evacuation routes, and emergency contacts to help affeted individuals</p>
             </div> 
             <div>
-                <img src="Assets/section_two_second_pic.jpg">
+                <img class="modal-image" src="Assets/section_two_second_pic.jpg">
                 <h2>Facilitate Donations & <br> Support</h2>
                 <p>Enable secure donations, volunteer sign-ups, and fundraising efforts to mobilize aid and resource efficiently</p>
             </div>
             <div>
-                <img src="Assets/section_two_third_pic.jpg ">
+                <img class="modal-image" src="Assets/section_two_third_pic.jpg ">
                 <h2>Coordinate Relief Efforts & <br> Recovery Plans</h2>
                 <p>Connect organizations, responders, and communities to streamline disaster response and long-term rebuilding efforts</p>
             </div>
@@ -110,6 +110,12 @@
                 <i class="fab fa-facebook-f"></i>
                 <i class="fab fa-instagram"></i>
             </div>
+        </div>
+
+        <div id="imgModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImage">
+            <div id="caption"></div>
         </div>
             <script src="script.js"></script>
     </body>

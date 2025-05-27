@@ -28,9 +28,13 @@ p {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    display: block;
-    padding-bottom: 50px;
-    height: 590px;
+    padding: 80px 20px;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
     
 }
 
@@ -595,12 +599,21 @@ input:-webkit-autofill:active {
   }
 
   .sign-up-container {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
   }
 
   .sign-up-container input {
-    width: 100%;
+    width: 75%;
+  }
+
+  .sign-up-btn {
+    width: auto;
+    white-space: nowrap;
+    padding: 10px 20px;
   }
 
   .social-icons {
@@ -673,10 +686,22 @@ input:-webkit-autofill:active {
     margin-bottom: 50px;
 }
 
+.sign-up-container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sign-up-container input {
+    width: 75%;
+  }
+
   .send-btn,
   .sign-up-btn {
-    width: 30%;
-    padding: 12px 0;
+    width: auto;
+    padding: 10px 16;
     font-size: 16px;
     margin: 10px 0;
   }

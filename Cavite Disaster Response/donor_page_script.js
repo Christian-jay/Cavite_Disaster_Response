@@ -34,7 +34,7 @@ if (drawerOverlay) {
 }
 
 // Close drawer on escape key
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && mobileDrawer && mobileDrawer.classList.contains('active')) {
         closeDrawer();
     }
@@ -58,14 +58,14 @@ function sortBy(criteria) {
     document.querySelectorAll('.filter-option').forEach(option => {
         option.classList.remove('active');
     });
-    
+
     // Add active class to clicked option
     if (event && event.target) {
         event.target.classList.add('active');
     }
 
     filterDisasters();
-    
+
     // Close drawer after selection on mobile
     if (window.innerWidth <= 991) {
         closeDrawer();
@@ -142,7 +142,7 @@ function simulateUpdates() {
 }
 
 // Add interactive effects
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.btn').forEach(btn => {
         btn.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-2px)';
@@ -167,9 +167,104 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Handle window resize
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
     // Close mobile drawer if window becomes large
     if (window.innerWidth > 991 && mobileDrawer && mobileDrawer.classList.contains('active')) {
         closeDrawer();
     }
+});
+
+let itemCounter = 1;
+
+// Show donation popup
+function showDonationPopup() {
+    document.getElementById('donationPopup').style.display = 'flex';
+    document.getElementById('donationChoice').style.display = 'block';
+    document.getElementById('monetaryForm').style.display = 'none';
+    document.getElementById('inKindForm').style.display = 'none';
+}
+
+// Close donation popup
+function closeDonationPopup() {
+    document.getElementById('donationPopup').style.display = 'none';
+    // Reset forms
+    document.getElementById('donationForm').reset();
+    document.getElementById('inKindDonationForm').reset();
+    // Reset to choice screen
+    document.getElementById('donationChoice').style.display = 'block';
+    document.getElementById('monetaryForm').style.display = 'none';
+    document.getElementById('inKindForm').style.display = 'none';
+}
+
+// Select donation type
+function selectDonationType(type) {
+    document.getElementById('donationChoice').style.display = 'none';
+
+    if (type === 'monetary') {
+        document.getElementById('monetaryForm').style.display = 'block';
+        document.getElementById('inKindForm').style.display = 'none';
+    } else if (type === 'in-kind') {
+        document.getElementById('monetaryForm').style.display = 'none';
+        document.getElementById('inKindForm').style.display = 'block';
+    }
+}
+
+// Add another item for in-kind donations
+function addAnotherItem() {
+    itemCounter++;
+    const itemsContainer = document.getElementById('itemsContainer');
+    const newItemEntry = document.createElement('div');
+    newItemEntry.className = 'item-entry';
+    newItemEntry.setAttribute('data-item', itemCounter);
+
+    newItemEntry.innerHTML = `
+                <div class="item-row">
+                    <div class="item-group">
+                        <label class="form-label">Item Name:</label>
+                        <input type="text" class="form-input" name="itemName[]" required>
+                    </div>
+                    <div class="item-group">
+                        <label class="form-label">Type:</label>
+                        <select class="form-input" name="itemType[]" required>
+                            <option value="">Select type</option>
+                            <option value="food">Food Supplies</option>
+                            <option value="water">Water</option>
+                            <option value="clothing">Apparel</option>
+                            <option value="medical">Medical Supplies</option>
+                            <option value="blankets">Blankets</option>
+                            <option value="hygiene">Hygiene Kits</option>
+                            <option value="emergency">Emergency Kits</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="item-group quantity-group">
+                        <label class="form-label">Quantity:</label>
+                        <input type="number" class="form-input" name="itemQuantity[]" min="1" required>
+                    </div>
+                    <button type="button" class="remove-item-btn" onclick="removeItem(this)">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `;
+
+    itemsContainer.appendChild(newItemEntry);
+}
+
+// Remove item entry
+function removeItem(button) {
+    const itemEntry = button.closest('.item-entry');
+    itemEntry.remove();
+}
+
+// Handle form submissions
+document.getElementById('donationForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('Monetary donation submitted successfully!');
+    closeDonationPopup();
+});
+
+document.getElementById('inKindDonationForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('In-kind donation submitted successfully!');
+    closeDonationPopup();
 });

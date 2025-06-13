@@ -11,6 +11,222 @@
 </head>
 
 <body>
+    <!-- Donation Popup Modal -->
+    <div class="donation-popup" id="donationPopup">
+        <!-- Initial Choice Screen -->
+        <div class="donation-popup-content" id="donationChoice">
+            <button class="popup-close" onclick="closeDonationPopup()">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3>How do you want to donate?</h3>
+            <div class="donation-choices">
+                <button class="donation-choice" onclick="selectDonationType('monetary')">
+                    <i class="fas fa-coins"></i>
+                    <span>Monetary</span>
+                </button>
+                <button class="donation-choice" onclick="selectDonationType('in-kind')">
+                    <i class="fas fa-box"></i>
+                    <span>In-Kind</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Fill Up Form -->
+        <div class="donation-form-content fill-up-form" id="monetaryForm">
+            <button class="popup-close" onclick="closeDonationPopup()">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="form-title">Fill up Form</h2>
+
+            <form id="donationForm">
+                <div class="form-group">
+                    <label class="form-label">Name:</label>
+                    <div class="form-row">
+                        <div style="flex: 1;">
+                            <div
+                                style="font-size: 0.8rem; color: transparent; margin-bottom: 3px; text-align: center; height: 16px;">
+                                placeholder</div>
+                            <input type="text" class="form-input" placeholder="First Name" required>
+                        </div>
+                        <div style="flex: 1;">
+                            <div
+                                style="font-size: 0.8rem; color: transparent; margin-bottom: 3px; text-align: center; height: 16px;">
+                                placeholder</div>
+                            <input type="text" class="form-input" placeholder="Last Name" required>
+                        </div>
+                        <div style="max-width: 80px;">
+                            <div
+                                style="font-size: 0.8rem; color: #ccc; margin-bottom: 3px; text-align: left; height: 16px;">
+                                (Optional)</div>
+                            <input type="text" class="form-input" placeholder="M.I." maxlength="3">
+                        </div>
+                        <div style="max-width: 80px;">
+                            <div
+                                style="font-size: 0.8rem; color: #ccc; margin-bottom: 3px; text-align: left; height: 16px;">
+                                (If Any)</div>
+                            <input type="text" class="form-input" placeholder="Suffix">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Email:</label>
+                    <input type="email" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Contact No.</label>
+                    <input type="tel" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Amount:</label>
+                    <input type="number" class="form-input" placeholder="Enter amount in PHP" required>
+                </div>
+
+                <div class="location-row">
+                    <div class="location-group">
+                        <label class="form-label">Pickup Location:</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div class="location-group">
+                        <label class="form-label">Drop off location:</label>
+                        <div class="dropdown-input">
+                            <select class="form-input" required>
+                                <option value="">Select location</option>
+                                <option value="bacoor-city-hall">Carmona</option>
+                                <option value="molino-evacuation-center">Dasma</option>
+                                <option value="community-center">Bacoor</option>
+                                <option value="barangay-hall">Kawit</option>
+                                <option value="barangay-hall">Naic</option>
+                                <option value="barangay-hall">GMA</option>
+                                <option value="barangay-hall">Maragondon</option>
+                                <option value="barangay-hall">Indang</option>
+                                <option value="barangay-hall">Silang</option>
+                                <option value="barangay-hall">Cavite City</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="confirm-btn">Confirm</button>
+                <div style="clear: both;"></div>
+            </form>
+        </div>
+        
+        <div class="donation-form-content fill-up-form" id="inKindForm">
+            <button class="popup-close" onclick="closeDonationPopup()">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="form-title">Fill up Form</h2>
+
+            <form id="inKindDonationForm">
+                <div class="form-group">
+                    <label class="form-label">Name:</label>
+                    <div class="form-row">
+                        <div style="flex: 1;">
+                            <div
+                                style="font-size: 0.8rem; color: transparent; margin-bottom: 3px; text-align: center; height: 16px;">
+                                placeholder</div>
+                            <input type="text" class="form-input" placeholder="First Name" required>
+                        </div>
+                        <div style="flex: 1;">
+                            <div
+                                style="font-size: 0.8rem; color: transparent; margin-bottom: 3px; text-align: center; height: 16px;">
+                                placeholder</div>
+                            <input type="text" class="form-input" placeholder="Last Name" required>
+                        </div>
+                        <div style="max-width: 80px;">
+                            <div
+                                style="font-size: 0.8rem; color: #ccc; margin-bottom: 3px; text-align: left; height: 16px;">
+                                (Optional)</div>
+                            <input type="text" class="form-input" placeholder="M.I." maxlength="3">
+                        </div>
+                        <div style="max-width: 80px;">
+                            <div
+                                style="font-size: 0.8rem; color: #ccc; margin-bottom: 3px; text-align: left; height: 16px;">
+                                (If Any)</div>
+                            <input type="text" class="form-input" placeholder="Suffix">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Email:</label>
+                    <input type="email" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Contact No.</label>
+                    <input type="tel" class="form-input" required>
+                </div>
+
+                <!-- Dynamic Item Entry Section -->
+                <div id="itemsContainer">
+                    <div class="item-entry" data-item="1">
+                        <div class="item-row">
+                            <div class="item-group">
+                                <label class="form-label">Item Name:</label>
+                                <input type="text" class="form-input" name="itemName[]" required>
+                            </div>
+                            <div class="item-group">
+                                <label class="form-label">Type:</label>
+                                <select class="form-input" name="itemType[]" required>
+                                    <option value="">Select type</option>
+                                    <option value="food">Food Supplies</option>
+                                    <option value="water">Water</option>
+                                    <option value="clothing">Apparel</option>
+                                    <option value="medical">Medical Supplies</option>
+                                    <option value="blankets">Blankets</option>
+                                    <option value="hygiene">Hygiene Kits</option>
+                                    <option value="emergency">Emergency Kits</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="item-group quantity-group">
+                                <label class="form-label">Quantity:</label>
+                                <input type="number" class="form-input" name="itemQuantity[]" min="1" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="add-item-btn" onclick="addAnotherItem()">
+                    <i class="fas fa-plus"></i> Donate Another
+                </button>
+
+                <div class="location-row">
+                    <div class="location-group">
+                        <label class="form-label">Pickup Location:</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div class="location-group">
+                        <label class="form-label">Drop off location:</label>
+                        <div class="dropdown-input">
+                            <select class="form-input" required>
+                                <option value="">Select location</option>
+                                <option value="carmona">Carmona</option>
+                                <option value="dasma">Dasma</option>
+                                <option value="bacoor">Bacoor</option>
+                                <option value="kawit">Kawit</option>
+                                <option value="naic">Naic</option>
+                                <option value="gma">GMA</option>
+                                <option value="maragondon">Maragondon</option>
+                                <option value="indang">Indang</option>
+                                <option value="silang">Silang</option>
+                                <option value="cavite-city">Cavite City</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="confirm-btn">Confirm</button>
+                <div style="clear: both;"></div>
+            </form>
+        </div>
+
+    </div>
+
     <!-- Mobile Drawer Overlay -->
     <div class="drawer-overlay" id="drawerOverlay"></div>
 
@@ -22,7 +238,7 @@
                 <i class="fas fa-times"></i>
             </button>
         </div>
-        
+
         <div class="drawer-content">
             <!-- Navigation Section -->
             <div class="drawer-section nav-section">
@@ -122,27 +338,19 @@
                     <!-- Filter Section -->
                     <div class="filter-card">
                         <h5>Sort by:</h5>
-                        <button class="filter-option" onclick="sortBy('location')">
-                            <i class="fas fa-map-marker-alt"></i>Location</button>
-                        <button class="filter-option" onclick="sortBy('date')">
-                            <i class="fas fa-calendar-alt"></i>Date</button>
-                        <button class="filter-option" onclick="sortBy('disaster')">
-                            <i class="fas fa-exclamation-triangle"></i>Disaster</button>
-                        <button class="filter-option" onclick="sortBy('status')">
-                            <i class="fas fa-info-circle"></i>Status</button>
+                        <button class="filter-option" onclick="sortBy('location')">Location</button>
+                        <button class="filter-option" onclick="sortBy('date')">Date</button>
+                        <button class="filter-option" onclick="sortBy('disaster')">Disaster</button>
+                        <button class="filter-option" onclick="sortBy('status')">Status</button>
                     </div>
 
                     <!-- User Section -->
                     <div class="user-card">
                         <h5>Personal</h5>
-                        <button class="user-menu-item">
-                            <i class="fas fa-user"></i>Account</button>
-                        <button class="user-menu-item">
-                            <i class="fas fa-camera"></i>Profile Picture</button>
-                        <button class="user-menu-item">
-                            <i class="fas fa-cog"></i>Settings</button>
-                        <button class="btn-logout" onclick="logout()">
-                            Logout</button>
+                        <button class="user-menu-item">Account</button>
+                        <button class="user-menu-item">Profile Picture</button>
+                        <button class="user-menu-item">Settings</button>
+                        <button class="btn-logout" onclick="logout()">Logout</button>
                     </div>
                 </div>
             </div>
@@ -179,7 +387,7 @@
                                 </div>
 
                                 <div class="action-buttons text-center">
-                                    <button class="btn" onclick="donate()">
+                                    <button class="btn" onclick="showDonationPopup()">
                                         Donate
                                     </button>
                                     <button class="btn" onclick="volunteer()">
@@ -254,7 +462,6 @@
             </div>
         </div>
     </div>
-
     <script src="donor_page_script.js"></script>
 </body>
 

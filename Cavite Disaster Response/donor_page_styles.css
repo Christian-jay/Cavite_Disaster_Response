@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Young+Serif&display=swap');
+
 :root {
     --primary-green: #2d5a3d;
     --accent-orange: #ff6b35;
@@ -695,7 +696,7 @@ body {
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     align-items: flex-start;
 }
 
@@ -831,8 +832,10 @@ body {
 }
 
 .small-input {
-    max-width: none; /* Remove max-width restriction */
-    min-width: 60px; /* Ensure minimum visibility */
+    max-width: none;
+    /* Remove max-width restriction */
+    min-width: 60px;
+    /* Ensure minimum visibility */
 }
 
 /* Ensure form inputs remain visible and usable */
@@ -844,7 +847,8 @@ body {
     background: #fff;
     font-size: 14px;
     box-sizing: border-box;
-    min-height: 44px; /* Ensure touch-friendly size */
+    min-height: 44px;
+    /* Ensure touch-friendly size */
 }
 
 /* Location row specific fixes */
@@ -909,25 +913,30 @@ body {
     }
 
     .form-row {
-        flex-direction: row; /* Stack vertically on mobile */
-        gap: 5px; /* Reduce gap on mobile */
+        flex-direction: row;
+        /* Stack vertically on mobile */
+        gap: 5px;
+        /* Reduce gap on mobile */
     }
-    
+
     .form-group {
-        width: 100%; /* Full width on mobile */
-        min-width: unset; /* Remove minimum width constraint */
+        width: 100%;
+        /* Full width on mobile */
+        min-width: unset;
+        /* Remove minimum width constraint */
     }
-    
+
     /* Special handling for name fields if they need to stay inline */
     .name-row {
         flex-direction: row;
         flex-wrap: wrap;
     }
-    
+
     .name-row .form-group {
-        min-width: 80px; /* Smaller minimum for name fields */
+        min-width: 80px;
+        /* Smaller minimum for name fields */
     }
-    
+
     /* For very small fields like M.I. and Suffix */
     .small-field {
         flex: 0 0 auto;
@@ -940,19 +949,19 @@ body {
     .form-row {
         gap: 8px;
     }
-    
+
     /* Force all form fields to stack on very small screens */
     .form-row .form-group {
         flex: none;
         width: 100%;
     }
-    
+
     /* Exception for very short fields that can share a row */
     .short-fields-row {
         display: flex;
         gap: 10px;
     }
-    
+
     .short-fields-row .form-group {
         flex: 1;
         width: auto;
@@ -979,16 +988,109 @@ body {
     .disaster-image {
         height: 180px;
     }
-    
+
 }
 
 @media (max-width: 575.98px) {
     .location-row {
         flex-direction: column;
     }
-    
+
     .location-group {
         width: 100%;
         min-width: unset;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .status-panel {
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .btn-status {
+        display: none !important;
+    }
+}
+
+.drawer-content {
+    padding: 12px;
+
+}
+
+/* Status Drawer Overlay */
+.status-drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.status-drawer-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Status Drawer */
+.status-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--light-green);
+    z-index: 1050;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.status-drawer.active {
+    right: 0;
+}
+
+/* Adjust the status panel for mobile */
+.status-drawer .status-panel {
+    background-color: var(--primary-green);
+    border-radius: 0;
+    padding: rem;
+    margin-bottom: 0;
+    box-shadow: none;
+}
+
+/* Show status button only on mobile */
+@media (max-width: 991.98px) {
+    .btn-status-modal {
+        display: block !important;
+        width: 100%;
+        margin-bottom: 1rem;
+        background-color: var(--accent-orange);
+        color: white;
+        border: none;
+        padding: 0.75rem;
+        border-radius: 8px;
+        font-weight: 500;
+    }
+
+    .btn-status-modal:hover {
+        background-color: #e55a2b;
+    }
+}
+
+@media (min-width: 992px) {
+    .btn-status-modal {
+        display: none !important;
+    }
+
+    .status-drawer-overlay,
+    .status-drawer {
+        display: none !important;
     }
 }

@@ -113,7 +113,7 @@
                 <div style="clear: both;"></div>
             </form>
         </div>
-        
+
         <div class="donation-form-content fill-up-form" id="inKindForm">
             <button class="popup-close" onclick="closeDonationPopup()">
                 <i class="fas fa-times"></i>
@@ -290,6 +290,71 @@
         </div>
     </div>
 
+    <!-- Status Drawer Overlay -->
+    <div class="status-drawer-overlay" id="statusDrawerOverlay"></div>
+
+    <!-- Status Drawer -->
+    <div class="status-drawer" id="statusDrawer">
+        <div class="drawer-header">
+            <h5>DONATION STATUS</h5>
+            <button class="drawer-close" id="statusDrawerClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="drawer-content">
+            <div class="status-item">
+                <span class="status-label">Php. Donations</span>
+                <span class="status-value" id="donationValue">₱125,000</span>
+            </div>
+
+            <div class="status-item">
+                <span class="status-label">Apparel</span>
+                <span class="status-value">2,450 pcs</span>
+            </div>
+
+            <div class="status-item">
+                <span class="status-label">Food Supplies</span>
+                <span class="status-value">1,890 packs</span>
+            </div>
+
+            <div class="status-item">
+                <span class="status-label">Water</span>
+                <span class="status-value">3,200L</span>
+            </div>
+
+            <div class="status-item">
+                <span class="status-label">Medical Supplies</span>
+                <span class="status-value">850 units</span>
+            </div>
+
+            <div class="status-item">
+                <span class="status-label">Blankets</span>
+                <span class="status-value">1,200 pcs</span>
+            </div>
+
+            <div class="status-item">
+                <span class="status-label">Hygiene Kits</span>
+                <span class="status-value">980 sets</span>
+            </div>
+
+            <div class="status-item">
+                <span class="status-label">Emergency Kits</span>
+                <span class="status-value">560 kits</span>
+            </div>
+
+            <div class="progress-section">
+                <div class="status-label mb-2">Progress</div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 65%" id="progressBar">
+                        <span class="visually-hidden">65% Complete</span>
+                    </div>
+                </div>
+                <small class="text-light mt-1 d-block text-center" style="font-family: 'Bitter', serif;">65% of goal
+                    reached</small>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container-fluid">
@@ -361,6 +426,11 @@
                     <div class="row">
                         <!-- Disaster Card -->
                         <div class="col-xl-8 col-lg-7">
+                            <button style="font-family: 'Bitter', serif; background: var(--accent-orange); color: white; border: none;
+                            padding: 0.6rem 0.25rem; border-radius: 15px; font-size: 0.9rem; font-weight: 400; margin: 0rem;
+                            margin-top: 0rem; margin-bottom: .5rem;     transition: all 0.2s;" class="btn btn-status" onclick="openStatusModal()">
+                                View Status
+                            </button>
                             <div class="disaster-card">
                                 <div class="disaster-header">
                                     <h3>Severe Flooding in Bacoor City, Cavite</h3>
@@ -453,7 +523,8 @@
                                             <span class="visually-hidden">65% Complete</span>
                                         </div>
                                     </div>
-                                    <small class="text-light mt-1 d-block text-center" style="font-family: 'Bitter', serif;">65% of goal reached</small>
+                                    <small class="text-light mt-1 d-block text-center"
+                                        style="font-family: 'Bitter', serif;">65% of goal reached</small>
                                 </div>
                             </div>
                         </div>

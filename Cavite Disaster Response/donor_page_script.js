@@ -268,3 +268,25 @@ document.getElementById('inKindDonationForm').addEventListener('submit', functio
     alert('In-kind donation submitted successfully!');
     closeDonationPopup();
 });
+
+// Add these functions to handle the status drawer
+function openStatusDrawer() {
+    document.getElementById('statusDrawerOverlay').classList.add('active');
+    document.getElementById('statusDrawer').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeStatusDrawer() {
+    document.getElementById('statusDrawerOverlay').classList.remove('active');
+    document.getElementById('statusDrawer').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Update the existing event listeners
+document.getElementById('statusDrawerOverlay').addEventListener('click', closeStatusDrawer);
+document.getElementById('statusDrawerClose').addEventListener('click', closeStatusDrawer);
+
+// Update the existing button to open the status drawer
+function openStatusModal() {
+    openStatusDrawer();
+}

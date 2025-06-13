@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Young+Serif&display=swap');
 :root {
     --primary-green: #2d5a3d;
     --accent-orange: #ff6b35;
@@ -18,10 +20,11 @@ body {
 }
 
 .header h1 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 0.5px;
     margin: 0;
+    font-family: 'Young Serif', serif;
 }
 
 /* Mobile Menu Button */
@@ -41,6 +44,7 @@ body {
 
 /* Key fix: Align navigation with main content */
 .header-nav {
+    font-family: 'Young Serif', serif;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -105,8 +109,9 @@ body {
 }
 
 .drawer-header h5 {
+    font-family: 'Young Serif', serif;
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 400;
     margin: 0;
 }
 
@@ -296,6 +301,7 @@ body {
 }
 
 .filter-card {
+    font-family: 'Bitter', serif;
     background-color: var(--primary-green);
     border-radius: 10px;
     padding: 1.25rem;
@@ -304,6 +310,7 @@ body {
 }
 
 .filter-card h5 {
+    font-family: 'Young Serif', serif;
     color: white;
     font-size: 1rem;
     margin-bottom: 1rem;
@@ -335,6 +342,7 @@ body {
 }
 
 .user-card {
+    font-family: 'Bitter', serif;
     background-color: var(--primary-green);
     border-radius: 10px;
     padding: 1.25rem;
@@ -348,6 +356,7 @@ body {
 }
 
 .user-card h5 {
+    font-family: 'Young Serif', serif;
     color: white;
     font-size: 1rem;
     margin-bottom: 1rem;
@@ -416,6 +425,7 @@ body {
 }
 
 .disaster-header h3 {
+    font-family: 'Young Serif', serif;
     font-size: 1.1rem;
     margin-bottom: 0.75rem;
     font-weight: 600;
@@ -424,6 +434,7 @@ body {
 }
 
 .disaster-description {
+    font-family: 'Bitter', serif;
     font-size: 0.9rem;
     line-height: 1.4;
     margin: 0;
@@ -447,6 +458,7 @@ body {
 }
 
 .disaster-footer {
+    font-family: 'Young Serif', serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -486,12 +498,13 @@ body {
 }
 
 .status-header {
+    font-family: 'Young Serif', serif;
     text-align: center;
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--light-green);
-    font-weight: 600;
+    font-weight: 300;
 }
 
 .status-item {
@@ -508,6 +521,7 @@ body {
 
 .status-label {
     font-size: 0.9rem;
+    font-family: 'Bitter', serif;
 }
 
 .status-value {
@@ -532,13 +546,14 @@ body {
 
 /* Action Buttons */
 .action-buttons .btn {
+    font-family: 'Bitter', serif;
     background-color: white;
     color: var(--primary-green);
     border: none;
     padding: 0.6rem 1.25rem;
     border-radius: 25px;
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
     margin: 2rem;
     margin-top: 0rem;
     margin-bottom: 0rem;

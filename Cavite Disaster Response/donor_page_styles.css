@@ -16,7 +16,10 @@ body {
     background-color: var(--primary-green);
     color: white;
     padding: 12px 0;
-    box-shadow: 5px 2px 9px 2px #7d7d7d;
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .header h1 {
@@ -604,6 +607,7 @@ body {
     padding: 30px;
     max-width: 600px;
     width: 95%;
+    font-family: 'Young Serif', serif;
     max-height: 90vh;
     overflow-y: auto;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -612,6 +616,7 @@ body {
 }
 
 .donation-popup h3 {
+    font-family: 'Young Serif', serif;
     color: #fff;
     margin-bottom: 25px;
     font-size: 1.5rem;
@@ -630,7 +635,8 @@ body {
     border: none;
     border-radius: 10px;
     color: white;
-    font-weight: 600;
+    font-weight: 400;
+    font-family: 'Bitter', serif;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -701,7 +707,7 @@ body {
 
 .form-label {
     color: #fff;
-    font-weight: 600;
+    font-weight: 400;
     margin-bottom: 5px;
     display: block;
 }
@@ -747,22 +753,13 @@ body {
     position: relative;
 }
 
-.dropdown-arrow {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: #999;
-}
-
 .confirm-btn {
     background: linear-gradient(135deg, #ff6b35, #ff8e35);
     color: white;
     border: none;
     padding: 12px 30px;
     border-radius: 8px;
-    font-weight: 600;
+    font-weight: 400;
     cursor: pointer;
     float: right;
     margin-top: 20px;

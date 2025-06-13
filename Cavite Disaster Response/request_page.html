@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cavite Disaster Response</title>
+    <link rel="stylesheet" href="request_page_styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Mobile Drawer Overlay -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <h5>CAVITE DISASTER RESPONSE</h5>
+            <button class="drawer-close" id="drawerClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="drawer-content">
+            <!-- Navigation Section -->
+            <div class="drawer-section nav-section">
+                <h6>Navigation</h6>
+                <a href="donor_page.html" class="mobile-nav-link">
+                    <i class="fas fa-home"></i>Home
+                </a>
+                <a href="request_page.html" class="mobile-nav-link">
+                    <i class="fas fa-hands-helping"></i>Requests
+                </a>
+                <a href="#" class="mobile-nav-link">
+                    <i class="fas fa-chart-line"></i>ImpactBoard
+                </a>
+            </div>
+
+            <!-- Saved Posts Section -->
+            <div class="drawer-section">
+                <h6>Saved Posts</h6>
+                <div class="saved-post-item">
+                    <div class="saved-post-title">Severe Flooding in Bacoor City, Cavite</div>
+                    <div class="saved-post-image">
+                        <i class="fas fa-image" style="font-size: 2rem; color: #999;"></i>
+                    </div>
+                    <div class="saved-post-actions">
+                        <button class="saved-post-btn">Donate</button>
+                        <button class="saved-post-btn">Volunteer</button>
+                    </div>
+                </div>
+                <div class="saved-post-item">
+                    <div class="saved-post-title">Severe Flooding in Bacoor City, Cavite</div>
+                    <div class="saved-post-image">
+                        <i class="fas fa-image" style="font-size: 2rem; color: #999;"></i>
+                    </div>
+                    <div class="saved-post-actions">
+                        <button class="saved-post-btn">Donate</button>
+                        <button class="saved-post-btn">Volunteer</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Section -->
+            <div class="drawer-section personal-section">
+                <h6>Personal</h6>
+                <button class="personal-menu-item">
+                    <i class="fas fa-user"></i>Account
+                </button>
+                <button class="personal-menu-item">
+                    <i class="fas fa-camera"></i>Profile Picture
+                </button>
+                <button class="personal-menu-item">
+                    <i class="fas fa-cog"></i>Settings
+                </button>
+                <button class="btn-logout">
+                    <i class="fas fa-sign-out-alt me-2"></i>Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-4">
+                    <div class="d-flex align-items-center">
+                        <button class="mobile-menu-btn d-lg-none" id="mobileMenuBtn">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <h1>CAVITE DISASTER RESPONSE</h1>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 d-none d-lg-block">
+                    <div class="header-nav">
+                        <nav>
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="donor_page.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="request_page.html">Requests</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">ImpactBoard</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-3 col-md-4 d-none d-lg-block">
+                <div class="sidebar">
+                    <!-- Search Box -->
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="form-control" placeholder="Search" id="searchInput">
+                    </div>
+
+                    <!-- Saved Posts Button -->
+                    <h6 class="saved-posts-btn">
+                        <i class="fas fa-bookmark me-2"></i>Saved Posts
+                    </h6>
+
+                    <!-- Saved Posts Container -->
+                    <div id="savedPostsContainer">
+                        <div class="saved-post-item">
+                            <div class="saved-post-title">Severe Flooding in Bacoor City, Cavite</div>
+                            <div class="saved-post-image">
+                                <i class="fas fa-image" style="font-size: 2rem; color: #999;"></i>
+                            </div>
+                            <div class="saved-post-actions">
+                                <button class="saved-post-btn">Donate</button>
+                                <button class="saved-post-btn">Volunteer</button>
+                            </div>
+                        </div>
+                        <div class="saved-post-item">
+                            <div class="saved-post-title">Severe Flooding in Bacoor City, Cavite</div>
+                            <div class="saved-post-image">
+                                <i class="fas fa-image" style="font-size: 2rem; color: #999;"></i>
+                            </div>
+                            <div class="saved-post-actions">
+                                <button class="saved-post-btn">Donate</button>
+                                <button class="saved-post-btn">Volunteer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-9">
+                <div class="main-content">
+                    <!-- Request Form -->
+                    <div class="request-form-container">
+                        <form id="requestForm">
+                            <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="text" class="form-control" id="title" placeholder="Enter title" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description">What's happening?</label>
+                                <textarea class="form-control" id="description" rows="4"
+                                    placeholder="Describe the situation..." required></textarea>
+                            </div>
+
+                            <div class="dropdown-container">
+                                <div class="dropdown-group">
+                                    <label>Location</label>
+                                    <select class="dropdown-btn" required>
+                                        <option value="">Select location</option>
+                                        <option value="carmona">Carmona</option>
+                                        <option value="dasma">Dasma</option>
+                                        <option value="bacoor">Bacoor</option>
+                                        <option value="kawit">Kawit</option>
+                                        <option value="naic">Naic</option>
+                                        <option value="gma">GMA</option>
+                                        <option value="maragondon">Maragondon</option>
+                                        <option value="indang">Indang</option>
+                                        <option value="silang">Silang</option>
+                                        <option value="cavite-city">Cavite City</option>
+                                    </select>
+                                </div>
+                                <div class="dropdown-group">
+                                    <label>Category</label>
+                                    <select class="dropdown-btn" required>
+                                        <option value="">Select location</option>
+                                        <option value="carmona">Flood</option>
+                                        <option value="dasma">Storm</option>
+                                        <option value="bacoor">Earthquake</option>
+                                        <option value="kawit">Wildfire</option>
+                                        <option value="naic">Tsunami</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Add Image</label>
+                                <div class="image-upload-area" id="imageUploadArea">
+                                    <div class="upload-icon">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                    </div>
+                                    <p>Click to upload or drag and drop</p>
+                                    <small>PNG, JPG up to 10MB</small>
+                                    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                                </div>
+                                <div id="imagePreview" class="hidden">
+                                    <img id="previewImage" class="image-preview" alt="Preview">
+                                    <button type="button" class="btn btn-sm btn-danger" onclick="removeImage()">
+                                        <i class="fas fa-trash"></i> Remove
+                                    </button>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane me-2"></i>Submit
+                            </button>
+                            <div style="clear: both;"></div>
+                        </form>
+                    </div>
+
+                    <!-- Status Panel -->
+                    <div class="status-panel">
+                        <div class="status-header">Requests Status</div>
+
+                        <div class="status-item">
+                            <div class="status-item-title">Severe Flooding in Bacoor City, Cavite</div>
+                            <div class="status-item-image">
+                                <i class="fas fa-image" style="font-size: 2rem; color: #999;"></i>
+                            </div>
+                            <div class="status-badges">
+                                <span class="status-badge pending">Pending</span>
+                                <span class="status-badge approved">Approved</span>
+                                <span class="status-badge declined">Declined</span>
+                            </div>
+                        </div>
+
+                        <div class="status-item">
+                            <div class="status-item-title">Severe Flooding in Bacoor City, Cavite</div>
+                            <div class="status-item-image">
+                                <i class="fas fa-image" style="font-size: 2rem; color: #999;"></i>
+                            </div>
+                            <div class="status-badges">
+                                <span class="status-badge pending">Pending</span>
+                                <span class="status-badge approved">Approved</span>
+                                <span class="status-badge declined">Declined</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="request_page_script.js"></script>
+</body>
+
+</html>

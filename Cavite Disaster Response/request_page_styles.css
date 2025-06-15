@@ -85,13 +85,14 @@ body {
     position: fixed;
     top: 0;
     left: -100%;
-    width: 320px;
+    width: 280px;
     height: 100vh;
-    background: linear-gradient(135deg, #2d5a4a 0%, #1a3d32 100%);
+    background: linear-gradient(135deg, #2d5a4a 0%, #1a3d32 100%);;
     z-index: 1999;
     transition: left 0.3s ease;
     overflow-y: auto;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-drawer.active {
@@ -107,8 +108,9 @@ body {
 }
 
 .drawer-header h5 {
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-family: 'Young Serif', serif;
+    font-size: 0.9rem;
+    font-weight: 400;
     margin: 0;
 }
 
@@ -118,6 +120,8 @@ body {
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
+    margin-left: 15px;
+    margin-bottom: 35px;
 }
 
 .drawer-content {
@@ -455,7 +459,7 @@ body {
     text-align: center;
     font-weight: 400;
     font-size: 1.1rem;
-    box-shadow: 5px 5px 15px 2px #7d7d7d;
+    box-shadow: 0px 0px 9px 0px #000000;
     color: white;
     display: inline-block;
     cursor: pointer;
@@ -473,7 +477,7 @@ body {
     padding: 1rem;
     margin-bottom: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 5px 5px 15px 2px #7d7d7d;
+    box-shadow: 0px 0px 9px 0px #000000;
 }
 
 .status-item-title {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -77,6 +78,44 @@
                 <button class="btn-logout">
                     <i class="fas fa-sign-out-alt me-2"></i>Logout
                 </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Drawer Overlay -->
+    <div class="status-drawer-overlay" id="statusDrawerOverlay"></div>
+
+    <!-- Status Drawer -->
+    <div class="status-drawer" id="statusDrawer">
+        <div class="drawer-header">
+            <div class="status-header">Requests Status</div>
+            <button class="drawer-close" id="statusDrawerClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="drawer-content">
+            <div class="status-item">
+                <div class="status-item-title">Severe Flooding in Bacoor City, Cavite</div>
+                <div class="status-item-image">
+                    <i class="fas fa-image" style="font-size: 2rem; color: #999;"></i>
+                </div>
+                <div class="status-badges">
+                    <span class="status-badge pending">Pending</span>
+                    <span class="status-badge approved">Approved</span>
+                    <span class="status-badge declined">Declined</span>
+                </div>
+            </div>
+
+            <div class="status-item">
+                <div class="status-item-title">Severe Flooding in Bacoor City, Cavite</div>
+                <div class="status-item-image">
+                    <i class="fas fa-image" style="font-size: 2rem; color: #999;"></i>
+                </div>
+                <div class="status-badges">
+                    <span class="status-badge pending">Pending</span>
+                    <span class="status-badge approved">Approved</span>
+                    <span class="status-badge declined">Declined</span>
+                </div>
             </div>
         </div>
     </div>
@@ -161,72 +200,82 @@
             <div class="col-lg-9">
                 <div class="main-content">
                     <!-- Request Form -->
-                    <div class="request-form-container">
-                        <form id="requestForm">
-                            <div class="form-group">
-                                <label for="title">Title</label>
-                                <input type="text" class="form-control" id="title" placeholder="Enter title" required>
-                            </div>
+                    <div class="col-xl-8 col-lg-7">
+                        <button style="font-family: 'Bitter', serif; background: var(--accent-orange); color: white; border: none;
+                            padding: 0.6rem 0.25rem; border-radius: 15px; font-size: 0.9rem; font-weight: 400; margin: 0rem;
+                            margin-top: 0rem; margin-bottom: .5rem;     transition: all 0.2s;" class="btn btn-status"
+                            onclick="openStatusModal()">
+                            View Status
+                        </button>
 
-                            <div class="form-group">
-                                <label for="description">What's happening?</label>
-                                <textarea class="form-control" id="description" rows="4"
-                                    placeholder="Describe the situation..." required></textarea>
-                            </div>
-
-                            <div class="dropdown-container">
-                                <div class="dropdown-group">
-                                    <label>Location</label>
-                                    <select class="dropdown-btn" required>
-                                        <option value="">Select location</option>
-                                        <option value="carmona">Carmona</option>
-                                        <option value="dasma">Dasma</option>
-                                        <option value="bacoor">Bacoor</option>
-                                        <option value="kawit">Kawit</option>
-                                        <option value="naic">Naic</option>
-                                        <option value="gma">GMA</option>
-                                        <option value="maragondon">Maragondon</option>
-                                        <option value="indang">Indang</option>
-                                        <option value="silang">Silang</option>
-                                        <option value="cavite-city">Cavite City</option>
-                                    </select>
+                        <div class="request-form-container">
+                            <form id="requestForm">
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" class="form-control" id="title" placeholder="Enter title"
+                                        required>
                                 </div>
-                                <div class="dropdown-group">
-                                    <label>Category</label>
-                                    <select class="dropdown-btn" required>
-                                        <option value="">Select location</option>
-                                        <option value="carmona">Flood</option>
-                                        <option value="dasma">Storm</option>
-                                        <option value="bacoor">Earthquake</option>
-                                        <option value="kawit">Wildfire</option>
-                                        <option value="naic">Tsunami</option>
-                                    </select>
-                                </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label>Add Image</label>
-                                <div class="image-upload-area" id="imageUploadArea">
-                                    <div class="upload-icon">
-                                        <i class="fas fa-cloud-upload-alt"></i>
+                                <div class="form-group">
+                                    <label for="description">What's happening?</label>
+                                    <textarea class="form-control" id="description" rows="4"
+                                        placeholder="Describe the situation..." required></textarea>
+                                </div>
+
+                                <div class="dropdown-container">
+                                    <div class="dropdown-group">
+                                        <label>Location</label>
+                                        <select class="dropdown-btn" required>
+                                            <option value="">Select location</option>
+                                            <option value="carmona">Carmona</option>
+                                            <option value="dasma">Dasma</option>
+                                            <option value="bacoor">Bacoor</option>
+                                            <option value="kawit">Kawit</option>
+                                            <option value="naic">Naic</option>
+                                            <option value="gma">GMA</option>
+                                            <option value="maragondon">Maragondon</option>
+                                            <option value="indang">Indang</option>
+                                            <option value="silang">Silang</option>
+                                            <option value="cavite-city">Cavite City</option>
+                                        </select>
                                     </div>
-                                    <p>Click to upload or drag and drop</p>
-                                    <small>PNG, JPG up to 10MB</small>
-                                    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                                    <div class="dropdown-group">
+                                        <label>Category</label>
+                                        <select class="dropdown-btn" required>
+                                            <option value="">Select location</option>
+                                            <option value="carmona">Flood</option>
+                                            <option value="dasma">Storm</option>
+                                            <option value="bacoor">Earthquake</option>
+                                            <option value="kawit">Wildfire</option>
+                                            <option value="naic">Tsunami</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div id="imagePreview" class="hidden">
-                                    <img id="previewImage" class="image-preview" alt="Preview">
-                                    <button type="button" class="btn btn-sm btn-danger" onclick="removeImage()">
-                                        <i class="fas fa-trash"></i> Remove
-                                    </button>
-                                </div>
-                            </div>
 
-                            <button type="submit" class="submit-btn">
-                                <i class="fas fa-paper-plane me-2"></i>Submit
-                            </button>
-                            <div style="clear: both;"></div>
-                        </form>
+                                <div class="form-group">
+                                    <label>Add Image</label>
+                                    <div class="image-upload-area" id="imageUploadArea">
+                                        <div class="upload-icon">
+                                            <i class="fas fa-cloud-upload-alt"></i>
+                                        </div>
+                                        <p>Click to upload or drag and drop</p>
+                                        <small>PNG, JPG up to 10MB</small>
+                                        <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                                    </div>
+                                    <div id="imagePreview" class="hidden">
+                                        <img id="previewImage" class="image-preview" alt="Preview">
+                                        <button type="button" class="btn btn-sm btn-danger" onclick="removeImage()">
+                                            <i class="fas fa-trash"></i> Remove
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="submit-btn">
+                                    <i class="fas fa-paper-plane me-2"></i>Submit
+                                </button>
+                                <div style="clear: both;"></div>
+                            </form>
+                        </div>
                     </div>
 
                     <!-- Status Panel -->

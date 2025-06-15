@@ -205,3 +205,24 @@ document.documentElement.style.scrollBehavior = 'smooth';
 
 // Console log for debugging
 console.log('Cavite Disaster Response - Request Page Initialized');
+
+function openStatusDrawer() {
+    document.getElementById('statusDrawerOverlay').classList.add('active');
+    document.getElementById('statusDrawer').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeStatusDrawer() {
+    document.getElementById('statusDrawerOverlay').classList.remove('active');
+    document.getElementById('statusDrawer').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Update the existing event listeners
+document.getElementById('statusDrawerOverlay').addEventListener('click', closeStatusDrawer);
+document.getElementById('statusDrawerClose').addEventListener('click', closeStatusDrawer);
+
+// Update the existing button to open the status drawer
+function openStatusModal() {
+    openStatusDrawer();
+}

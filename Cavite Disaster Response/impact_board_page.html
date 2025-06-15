@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cavite Disaster Response - Impact Board</title>
+    <link rel="stylesheet" href="impact_board_styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="logo">CAVITE DISASTER<br>RESPONSE</h1>
+        <div class="nav-links">
+            <a href="donor_page.html">Home</a>
+            <a href="request_page.html">Requests</a>
+            <a href="impact_board_page.html" class="active">ImpactBoard</a>
+        </div>
+    </div>  
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="search-container">
+                <span>🔍</span>
+                <input type="text" placeholder="Search" id="searchInput">
+            </div>
+
+            <button class="impact-button">Where you made an impact</button>
+
+            <div class="disaster-card active" onclick="showDisaster('fire')">
+                <h3>Residential Fire Displacement in Imus</h3>
+                <div class="disaster-image"></div>
+                <div class="disaster-details">
+                    <span>Location: Imus, Cavite</span>
+                    <span>Date: 11/15/2024</span>
+                </div>
+                <div class="disaster-details">
+                    <span>Status: Resolved</span>
+                    <span>Families: 25</span>
+                </div>
+                <div class="donated-badge">Donated</div>
+            </div>
+
+            <div class="disaster-card" onclick="showDisaster('flood')">
+                <h3>Severe Flooding in Bacoor City, Cavite</h3>
+                <div class="disaster-image flood-image"></div>
+                <div class="disaster-details">
+                    <span>Location: Bacoor, Cavite</span>
+                    <span>Date: 10/22/2024</span>
+                </div>
+                <div class="disaster-details">
+                    <span>Status: Ongoing</span>
+                    <span>Families: 150</span>
+                </div>
+                <div class="donated-badge">Donated</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="history-header">History</div>
+
+            <div id="fireContent" class="tab-content active">
+                <div class="history-card">
+                    <h2>Residential Fire Displacement in Imus</h2>
+                    <div class="history-image fire-image"></div>
+
+                    <div class="history-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Disaster:</span>
+                            <span class="detail-value">Residential Fire</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Location:</span>
+                            <span class="detail-value">Imus, Cavite</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Date Posted:</span>
+                            <span class="detail-value">11/15/2024</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Action Taken:</span>
+                            <span class="detail-value">Donate (Items)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Families Affected:</span>
+                            <span class="detail-value">25 Families</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Status:</span>
+                            <span class="detail-value">Resolved</span>
+                        </div>
+                    </div>
+
+                    <table class="items-table">
+                        <thead>
+                            <tr>
+                                <th>Item Name</th>
+                                <th>Item Type</th>
+                                <th>Item Status<br><span style="font-size: 10px;">(Apparel Only)</span></th>
+                                <th>Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>T-shirts</td>
+                                <td>Apparel</td>
+                                <td>New</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Pants</td>
+                                <td>Apparel</td>
+                                <td>Used</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>Rice</td>
+                                <td>Food</td>
+                                <td>---</td>
+                                <td>10 kg</td>
+                            </tr>
+                            <tr>
+                                <td>Blankets</td>
+                                <td>Bedding</td>
+                                <td>---</td>
+                                <td>8</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="floodContent" class="tab-content">
+                <div class="history-card">
+                    <h2>Severe Flooding in Bacoor City, Cavite</h2>
+                    <div class="history-image flood-image"></div>
+
+                    <div class="history-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Disaster:</span>
+                            <span class="detail-value">Severe Flooding</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Location:</span>
+                            <span class="detail-value">Bacoor, Cavite</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Date Posted:</span>
+                            <span class="detail-value">10/22/2024</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Action Taken:</span>
+                            <span class="detail-value">Volunteer</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Skills:</span>
+                            <span class="detail-value">Emergency Response</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Why Volunteer:</span>
+                            <span class="detail-value">Help evacuate families</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-right">
+            <div class="summary-card">
+                <h3>Donation Summary</h3>
+                <div class="summary-row">
+                    <span>Monetary</span>
+                    <span>₱12,500</span>
+                </div>
+                <div class="summary-row">
+                    <span>Items</span>
+                    <span>46 Items</span>
+                </div>
+
+                <table class="donations-table">
+                    <thead>
+                        <tr>
+                            <th>Item Type</th>
+                            <th>Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Apparel</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>Food</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Bedding</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>Medicine</td>
+                            <td>5</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="margin-top: 15px;">
+                    <div class="summary-row">
+                        <span>First Donation</span>
+                        <span>09/12/2024</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Last Donation</span>
+                        <span>11/15/2024</span>
+                    </div>
+                    <div style="text-align: center; margin-bottom: 5px;">Progress</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-card">
+                <div class="stats-label">As of today,</div>
+                <div class="stats-label">You have supported:</div>
+                <div class="stats-number">5</div>
+                <div class="stats-label">Disaster Relief Operations</div>
+            </div>
+        </div>
+    </div>
+    <script src="impact_board_script.js"></script>
+</body>
+</html>

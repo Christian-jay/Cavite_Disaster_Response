@@ -62,6 +62,10 @@ body {
     color: var(--accent-orange) !important;
 }
 
+.nav-link.active {
+    color: var(--accent-orange) !important;
+}
+
 /* Mobile Drawer */
 .drawer-overlay {
     position: fixed;
